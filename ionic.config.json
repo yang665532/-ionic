@@ -1,0 +1,7 @@
+{
+  "name": "countryRoad",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

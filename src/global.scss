@@ -1,0 +1,31 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+div.cavatar img.cround{	
+	border-radius:60px;
+	border:solid 5px #3EBB99;
+	
+	
+}
+div.cavatar{
+	height:250px;
+	padding-top:20px;
+	padding-left:90px;
+	border-bottom:solid 5px #F6F5FA;
+	
+}
+.cp_name{
+	COLOR:#3EBB99;
+	margin-left:20px;
+	margin-top:-2px;
+	
+}
