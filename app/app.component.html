@@ -1,0 +1,74 @@
+<ion-app>
+		<ion-router-outlet>
+		</ion-router-outlet>
+  <ion-split-pane>
+    <ion-menu id="menu-avatar">
+        <ion-header>
+            <ion-toolbar>
+              <ion-title>選單</ion-title>
+            </ion-toolbar>
+          </ion-header>
+		  <style>
+			#menu-avatar {
+				top: 0px;
+				right: 0px;
+				background: #FF5D5D;
+				color: white;
+				font-size: 12px;
+				position: absolute;
+				padding: 5px 8px;
+			  }
+			  
+			  .user-avatar {
+				padding: .5em;
+			  }
+			  h3,
+			  .label {
+				color: white;
+				font-weight: bold;
+			  }
+			  .item {
+				background: transparent;
+			  }
+			  ion-content {
+				background: linear-gradient(48deg, rgba(157, 72, 173, 0.8) 0%, rgba(157, 72, 173, 0.86) 28%, rgba(0, 168, 168, 0.98) 93%, rgba(0, 168, 168, 1) 100%);
+			  }
+			  .menu-inner {
+				background: rgba(255, 255, 255, .3);
+			  }
+			}
+		  </style>
+          
+          <ion-content >
+			<div #header>
+			  <ion-row style="align-items:center;">				
+				<ion-col col-6>
+				
+				  <div class="cavatar">
+					<img class="cround" src="../assets/images/avatar.png" style="width:120px; height:120px;"/>
+					<h1 class="cp_name">帳號名</h1>
+					<ion-button style=margin-left:27px;>登出</ion-button>
+					
+					</div>
+					
+				</ion-col>	
+				
+			  </ion-row>
+			  
+			  
+			</div>
+		  
+             <ion-list>
+               <ion-menu-toggle *ngFor="let p of appPages">
+                 <ion-item [routerLink]="p.url" [routerDirection]="'root'">
+                   <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                   <ion-label>{{p.title}}</ion-label>
+                 </ion-item>
+               </ion-menu-toggle>
+             </ion-list>
+          </ion-content>
+          
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
