@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title class="title">
+		<h3><span></span>康趣絡</h3>
+	</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <div class="slide-bar">
+	<ion-slides pager="true" [options]="slideOpts">
+      <ion-slide>
+        <img src="assets/images/slide1.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/slide2.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/images/slide3.jpg" />
+      </ion-slide>
+    </ion-slides>
+   </div>
+   <div class="time"> 
+    <div id="today">
+      <h1>18:17</h1>
+      <p>時辰:酉時<br>
+      適合穴位:腎經</p>
+    </div>
+   </div>
+
+   <div class="medics-notice">
+      <ion-grid>
+        <ion-row size="5">
+          <ion-col size="2.5">
+            <ion-thumbnail>
+              <img src="https://cdn4.iconfinder.com/data/icons/doctor-icons/100/02-1Doctor-512.png"> 
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col size="8">
+            <p id="title">每日醫療小知識</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div id="desc">
+        <p>不是說每天清水煮菜葉最健康，必要的脂肪和無機鹽也是人體必要的營養素。</p>
+      </div>      
+   </div>
+</ion-content>
