@@ -13,14 +13,14 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginPage } from './login/login.page';
+//import { LoginPage } from './login/login.page';
 
 const firebaseConfig ={
   
 }
 
 @NgModule({
-  declarations: [AppComponent, LoginPage],
+  declarations: [AppComponent],
   entryComponents: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig), // <-- firebase here

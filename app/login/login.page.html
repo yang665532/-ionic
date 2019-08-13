@@ -1,13 +1,26 @@
 <ion-header>
-  <!-- <ion-toolbar> -->
-    <ion-title>登入</ion-title>
-  <!-- </ion-toolbar> -->
-</ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+        </ion-buttons>
+      <ion-title>登入</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 <ion-content padding>
-    <!-- <ion-button expand="block" color="danger" (click)="doGoogleLogin()">Google 登入</ion-button>
-    <ion-button expand="block" color="blue" (click)="doGoogleLogin()">Facebook 登入</ion-button> -->
-    
-    <google-login></google-login>
-    
+  <div class="icon">
+    <img src="assets/images/app_icon.png">
+  </div>
+
+  <div>
+    <ion-button size="block">登入</ion-button>
+    <div class="note">
+      <p>沒有帳號嗎? 於此註冊或使用第三方登入</p>
+    </div>
+    <ion-button size="block">註冊</ion-button>
+    <ion-button size="block">Google 登入</ion-button>
+    <ion-button size="block">Facebook 登入</ion-button>
+    <ion-button class="pass" fill="clear" (click)="goHome()">或點此略過此步驟</ion-button>   
+  </div>
+
 </ion-content>
+
