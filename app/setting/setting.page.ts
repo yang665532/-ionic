@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-setting',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingPage implements OnInit {
 
-  constructor() { }
+  constructor(public navCtrl: NavController) { }
+
+  goHome(): void{
+    this.navCtrl.navigateRoot('/tabs');
+  }
 
   ngOnInit() {
   }

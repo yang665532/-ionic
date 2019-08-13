@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { FaqPage } from './faq.page';
+import { NavController } from '@ionic/angular';
 
 
 
