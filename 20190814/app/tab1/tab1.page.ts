@@ -15,10 +15,10 @@ export class Tab1Page {
       let now = this.momentjs().tz('Asia/Taipei').format('HH:mm');
       console.log(now);
     }
-    getChineseTime(){
-      let now = this.momentjs().tz('Asia/Taipei').format('HH:mm');
-      if (now >= "01:00" && now < "03:00") {
-        // this.time = "丑時";
-      }
-    }
+    // getChineseTime(){
+    //   let now = this.momentjs().tz('Asia/Taipei').format('HH:mm');
+    //   if (now >= "01:00" && now < "03:00") {
+    //     this.time = "丑時";
+    //   }
+    // }
 }
