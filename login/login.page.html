@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+        </ion-buttons>
+      <ion-title>登入</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <!-- <div class="icon">
+    <img src="assets/images/app_icon.png">
+  </div> -->
+
+  <form class="form" [formGroup]="validations_form"  (ngSubmit)="loginUser(validations_form.value)">
+
+    <ion-item>
+      <ion-label  position="floating" color="primary">信箱 Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  
+    <ion-item>
+      <ion-label  position="floating" color="primary">密碼 Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+    
+    <ion-button  class="submit-btn" type="submit"  [disabled]="!validations_form.valid">登入</ion-button>
+
+    <label class="error-message">{{errorMessage}}</label>
+  </form>
+
+  <div class="note">
+    <p>沒有帳號嗎? 於此註冊或使用第三方登入</p>
+  </div>
+  <div>  
+    <ion-button size="block" (click)="goToRegister()">註冊</ion-button>
+    <ion-button size="block">Google 登入</ion-button>
+    <ion-button size="block">Facebook 登入</ion-button>
+    <ion-button class="pass" fill="clear" (click)="goHome()">或點此略過此步驟</ion-button>   
+  </div>
+
+</ion-content>
+
