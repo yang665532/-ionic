@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+      </ion-buttons>
+    <ion-title>登入</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- <div class="icon">
+    <img src="assets/images/app_icon.png">
+  </div> -->
+
+  <form [formGroup]="loginForm">
+    <ion-item>
+      <ion-label position="stacked">Email</ion-label>
+      <ion-input
+        formControlName="email"
+        type="email"
+        placeholder="Your email address"
+        [class.invalid]="!loginForm.controls['email'].valid &&
+        loginForm.controls['email'].touched"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item
+      class="error-message"
+      *ngIf="!loginForm.controls['email'].valid &&
+         loginForm.controls['email'].touched"
+    >
+      <ion-label>Please enter a valid email address.</ion-label>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input
+        formControlName="password"
+        type="password"
+        placeholder="Your password"
+        [class.invalid]="!loginForm.controls['password'].valid&& loginForm.controls['password'].touched"
+      >
+      </ion-input>
+    </ion-item>
+    <ion-item
+      class="error-message"
+      *ngIf="!loginForm.controls['password'].valid
+        && loginForm.controls['password'].touched"
+    >
+      <ion-label>Your password needs more than 6 characters.</ion-label>
+    </ion-item>
+  
+    <ion-button
+      (click)="loginUser(loginForm)"
+      expand="block"
+      [disabled]="!loginForm.valid"
+    >
+      Log In
+    </ion-button>
+
+    <ion-button
+      expand="block"
+      (click)="resetPwd()"
+    >
+      Reset your Password
+    </ion-button>
+  </form>
+
+  <div class="note">
+    <p>沒有帳號嗎? 於此註冊或使用第三方登入</p>
+  </div>
+  <div>  
+    <ion-button size="block" (click)="goToRegister()">註冊</ion-button>
+    <ion-button size="block">Google 登入</ion-button>
+    <ion-button size="block">Facebook 登入</ion-button>
+    <ion-button class="pass" fill="clear" (click)="goHome()">或點此略過此步驟</ion-button>   
+  </div>
+
+</ion-content>
+
