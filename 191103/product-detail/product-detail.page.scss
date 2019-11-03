@@ -1,0 +1,29 @@
+.photo, video{
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content:  center;
+}
+
+.prev{
+    position: absolute;
+    left: 0vw;
+    top: 35vh;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: none;
+    background: rgba(121, 121, 121, 0.384);
+ }
+ 
+ .next{
+    position: absolute;
+    right: 0vw;
+    top: 35vh;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    border: none;
+    background: rgba(121, 121, 121, 0.384);
+ }
+

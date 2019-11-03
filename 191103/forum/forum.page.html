@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>
+        立冬進補不只補嘴空，中醫推5藥材美味且滋補強身
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--Main post-->
+  <ion-item>
+    <ion-avatar>
+      <img src="https://fortunedotcom.files.wordpress.com/2018/08/george-clooney-net-worth-tequila.jpg">
+    </ion-avatar>
+    <h3 class="name">阿忠師父</h3>
+  </ion-item>
+  <img src="https://c1.staticflickr.com/5/4540/38151272536_c9fd4f7e7e_b.jpg">
+
+  <ion-card-content>
+    <p style="white-space: pre-line;">{{article}}</p>
+  </ion-card-content>
+  <ion-item>
+    <ion-icon name="heart-empty"></ion-icon>
+    <p style="margin-right:5px;">23</p>
+    <ion-icon name="chatboxes"></ion-icon>
+    <p>{{userComment.length}}</p>
+    <ion-icon name="bookmark" slot="end"></ion-icon>
+  </ion-item>
+
+  <div style="background: rgba(173, 173, 173, 0.767);
+              height: 5px;" text-center>
+  </div>
+
+  <!--show user comments-->
+  <div *ngFor="let item of userComment" style="white-space: pre-line;">
+    <ion-item>
+      <ion-avatar>
+        <img src="{{item.profilePic}}">
+      </ion-avatar>
+      <p class="name">{{item.userName}}</p>
+      <ion-icon name="more" slot="end" *ngIf="checkUid"
+        (click)="moreOpts()"></ion-icon>
+    </ion-item>
+
+    <ion-card-content style="white-space: pre-line;">
+      <span>{{item.cmt}}</span>
+    </ion-card-content>
+    <ion-item>
+      <ion-icon name="heart-empty"></ion-icon>
+      <p></p>
+      <ion-icon name="chatboxes"></ion-icon>
+      <p></p>
+      <p slot="end"
+         style="font-size: 10px;
+                color: grey;">
+      {{item.dateTime}}
+    </p>
+    </ion-item>
+  </div>
+</ion-content>
+
+<!--Comment area-->
+<ion-footer fixed>
+  <div class="comment">
+    <ion-item>
+        <ion-avatar item-start>
+          <img src="{{ProfilePic}}">
+        </ion-avatar>
+      <p>{{authService.getName()}}</p>
+    </ion-item>
+    <ion-textarea required
+      placeholder="撰寫評論..." 
+      auto-grow [(ngModel)]="comment"
+      type="text" maxlength="500">
+    </ion-textarea>
+    
+    <ion-item>
+      <ion-icon name="image"></ion-icon>
+      <p slot="end">{{comment.length}}/500</p>
+      <ion-button class="send"
+        fill="clear"
+        (click)="postComment(comment)" slot="end">
+        <ion-icon 
+        name="paper-plane" 
+        size="large">
+        </ion-icon>
+      </ion-button>
+    </ion-item> 
+  </div>
+</ion-footer>

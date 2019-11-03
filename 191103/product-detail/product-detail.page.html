@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-buttons (click)="closeModal()" slot="end">
+        關閉
+      </ion-buttons>
+    <ion-title>{{Name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <button class="swiper-button-next prev" ion-button type="submit" (click)="btnPrev()">
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </button>
+    <ion-slides [options]="slideOpts" #slides>
+      <ion-slide>
+            <img class="photo" [src]="Photo">
+      </ion-slide>
+      <ion-slide>
+        <!-- <iframe [src]="Video" height="400" width="400"
+          frameborder="0" allowfullscreen autoplay=0 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture">
+        </iframe> -->
+        <video id="demo"
+                width="400" height="400" controls  controlsList="nodownload">
+          <source src="assets/videos/bearbon.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </ion-slide>
+    </ion-slides>
+    <button class="swiper-button-next next" ion-button type="submit" (click)="btnNext()">
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </button>
+  <p>{{Detail}}</p>
+
+  <ion-button>
+    <ion-icon name="heart"></ion-icon>
+    加入最愛
+  </ion-button>
+  <ion-button>
+    <ion-icon name="cart"></ion-icon>
+    加入購物車
+  </ion-button>
+</ion-content>
