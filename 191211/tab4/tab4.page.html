@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>個人</ion-title>
+		<ion-buttons (click)="logout()" slot="end">
+			登出
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<div class="avatar" text-center>
+		<img class="round" src="{{authService.getphotoURL()}}" (click)="changePhoto()">
+		<div *ngIf="uploadOpts">
+			<p (click)="selectImage()" 
+				class="upload" style="width:auto;">
+				變更頭像
+				<ion-icon name="md-create" style="color:#3EBB99;"></ion-icon>
+			</p>
+		</div>
+		<h1 class="p_name">{{authService.getName()}}</h1>
+		<p>{{userEmail}}</p>
+	</div>
+
+	<ion-list class="list">
+		<ion-item *ngFor="let list of fullList"
+			[routerLink]="list.url" text-center>
+			<ion-label>
+				<ion-icon [name]="list.icon" [src]="list.svg"></ion-icon>
+				{{list.title}}
+			</ion-label>
+		</ion-item>
+	</ion-list>
+</ion-content>

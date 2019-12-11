@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="goback()">
+      <ion-icon name="ios-arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>登入</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="loginForm">
+    <ion-item lines="none">
+      <ion-label position="stacked">電子郵件</ion-label>
+      <ion-input
+        formControlName="email"
+        type="email"
+        placeholder="請輸入您的電子郵件"
+        [class.invalid]="!loginForm.controls['email'].valid &&
+        loginForm.controls['email'].touched">
+      </ion-input>
+    </ion-item>
+    <ion-item 
+      class="error-message"
+      *ngIf="!loginForm.controls['email'].valid &&
+         loginForm.controls['email'].touched">
+      <ion-label>請輸入有效的電子郵件。</ion-label>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <ion-label position="stacked">密碼</ion-label>
+      <ion-input
+        formControlName="password"
+        type="password"
+        placeholder="請輸入密碼"
+        [class.invalid]="!loginForm.controls['password'].valid&& loginForm.controls['password'].touched">
+      </ion-input>
+    </ion-item>
+    <ion-item
+      class="error-message"
+      *ngIf="!loginForm.controls['password'].valid
+        && loginForm.controls['password'].touched">
+      <ion-label>密碼必須至少6個字元。</ion-label>
+    </ion-item>
+
+    <ion-button class="cantlogin"
+      fill="clear"
+      (click)="resetPwd()">
+      無法登入嗎?
+    </ion-button>
+    
+    <ion-button 
+      (click)="loginUser(loginForm)"
+      expand="block"
+      [disabled]="!loginForm.valid">
+      登入
+    </ion-button>
+
+  </form>
+
+  <div class="note">
+    <p>沒有帳號嗎? 於此註冊或使用第三方登入</p>
+  </div>
+  <div>  
+    <ion-button size="block" (click)="goToRegister()">註冊</ion-button>
+    <ion-button size="block" (click)="googleLogin()">Google 登入</ion-button>
+    <ion-button size="block">Facebook 登入</ion-button>
+  </div>
+
+</ion-content>
+

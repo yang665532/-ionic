@@ -1,0 +1,13 @@
+.ordered_product{
+    border:1px solid #000;
+    #pic{
+        img{border:1px solid #000;}
+    }
+    #amount{
+        color:grey;
+        font-size: 15px;
+    }
+    .price{
+        color: orangered;
+    }
+}

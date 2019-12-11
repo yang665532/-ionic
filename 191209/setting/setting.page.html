@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>設置</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-group>
+      <ion-item color="light">
+        <ion-icon name="key"></ion-icon>
+        帳號與安全
+      </ion-item>
+      <ion-item routerLink="/reset-password">重設密碼</ion-item>
+      <ion-item routerLink="/change-name">變更用戶名稱</ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
+<ion-footer>
+  <div (click)="logout()" routerDirection="root" class="logout">
+    <p>登出帳號</p>
+  </div>
+</ion-footer>

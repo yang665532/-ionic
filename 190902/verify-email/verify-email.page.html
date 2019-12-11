@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+      </ion-buttons>
+    <ion-title>電子信箱認證</ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content padding>  
+  <div class="icon">
+    <img src="assets/images/app_icon.png">
+  </div>
+  <br>
+  <div>請查看您的電子信箱並認證您的帳號</div>
+  <div>
+      <ion-button (click)='sendVerificationEmail()'>傳送認證通知</ion-button>
+      <ion-button (click)='verifyEmail()'>完成認證</ion-button>
+  </div>
+  
+  <div *ngIf="verificationEmailSent">
+    {{verificationEmailSent | date:'HH點mm分'}}已傳送！請至信箱查看並完成認證
+  </div>
+</ion-content>

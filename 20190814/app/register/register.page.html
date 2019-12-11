@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+        </ion-buttons>
+      <ion-title>註冊</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <div class="infoInput">
+    <div class="note">
+      <p><span style="color:red;">*</span>
+      為必填項目</p>
+    </div><br>
+    <ion-item>
+      <ion-label position="stacked">信箱 Email<span style="color:red;">*</span></ion-label>
+      <ion-input type="Email" placeholder="johnny@gmail.com"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">密碼 Password<span style="color:red;">*</span></ion-label>
+      <ion-input type="Password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">姓名 Name<span style="color:red;">*</span></ion-label>
+      <ion-input type="Name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">上傳大頭貼照 Upload Profile Photo</ion-label>
+      <ion-input type="Password"></ion-input>
+    </ion-item>
+    
+    <ion-button size="block" (click)="goHome()">註冊</ion-button>
+  </div>
+
+</ion-content>
+

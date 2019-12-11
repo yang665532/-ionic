@@ -1,0 +1,26 @@
+ion-footer{
+    box-shadow: 0 -3px 5px 0 rgb(146, 146, 146);
+    //height: 200px;
+}
+
+.name{
+    margin-left:10px;
+}
+
+.title{
+    border-bottom:1px solid rgba(165, 165, 165, 0.795);
+}
+
+.send{
+    font-size: 30px;
+    color:rgb(62, 187, 154);
+    :hover{
+        border-radius: 15px;
+        background: rgba(15, 26, 23, 0.418);
+      }
+}
+
+.cancel{
+    font-size: 20px;
+    font-weight: bold;
+}

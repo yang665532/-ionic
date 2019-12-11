@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-button (click)="goToPersonal()">
+            <ion-icon name="arrow-back" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    <ion-title>
+        我的點數
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-card-title class="point">
+            {{points}}
+          </ion-card-title>
+          <ion-icon id="coin" src="assets/icon/coin.svg"></ion-icon>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    <ion-list class="history">
+      <ion-item>
+        <ion-label class="title">
+          <ion-icon name="star"></ion-icon>
+          歷史紀錄
+        </ion-label>
+      </ion-item>
+      <ion-item *ngFor="let point of PointsHistory">
+        <ion-item lines="none">{{point.date}}</ion-item>
+        <ion-item lines="none">{{point.reason}}</ion-item>
+        <ion-item lines="none">{{point.points}}</ion-item>
+      </ion-item>
+    </ion-list>
+</ion-content>

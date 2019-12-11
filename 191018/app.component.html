@@ -1,0 +1,41 @@
+<ion-app>
+<ion-router-outlet>
+</ion-router-outlet>
+  <ion-split-pane>
+    <ion-menu id="menu-avatar">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>選單</ion-title>
+          </ion-toolbar>
+        </ion-header>
+          
+        <ion-content>
+          <ion-row style="align-items:center;">				
+            <ion-col col-6>
+              <ion-row>
+                <ion-col col-2 class="avatar">
+                  <img class="cround" src="../assets/images/avatar.png" style="width:120px; height:120px;"/>
+                <div class="Uname">
+                  <h1 class="userName" *ngIf="authService.getEmail()">
+                    {{authService.getEmail()}}
+                  </h1>
+                </div>              
+              </ion-col>
+            </ion-row>            
+            </ion-col>	
+          </ion-row>
+      
+          <ion-list>
+            <ion-menu-toggle *ngFor="let p of appPages">
+              <ion-item [routerLink]="p.url" [routerDirection]="'root'">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>{{p.title}}</ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet main></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

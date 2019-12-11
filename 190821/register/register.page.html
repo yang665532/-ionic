@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+        </ion-buttons>
+      <ion-title>註冊</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+  <form class="form" [formGroup]="validations_form"  (ngSubmit)="tryRegister(validations_form.value)">
+      <p class="note"><span style="color:red;">*</span>為必填項目</p>
+
+    <ion-item>
+      <ion-label  position="floating" color="primary"><span style="color:red;">*</span>信箱 Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('email').dirty || validations_form.get('email').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+  
+    <ion-item>
+      <ion-label  position="floating" color="primary"><span style="color:red;">*</span>密碼 Password</ion-label>
+      <ion-input type="password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('password').dirty || validations_form.get('password').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>  
+
+    <ion-item>
+      <ion-label  position="floating" color="primary"><span style="color:red;">*</span>暱稱 Nickname</ion-label>
+      <ion-input type="text" class="form-controll" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label  position="floating" color="primary">上傳大頭照 Upload Profile Photo</ion-label>
+      <ion-input type="Photo" class="form-controll" required></ion-input>
+    </ion-item>
+    
+    <ion-button  class="submit-btn" type="submit"  [disabled]="!validations_form.valid">註冊</ion-button>
+    <label class="error-message">{{errorMessage}}</label>
+    <label class="success-message">{{successMessage}}</label>
+  </form>
+  <p class="go-to-login">已經擁有帳號? <a (click)="goLoginPage()">於此登入</a></p>
+
+</ion-content>
+

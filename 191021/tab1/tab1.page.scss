@@ -1,0 +1,63 @@
+ion-content{
+	--overflow:hidden;
+}
+.slide-bar{
+	margin-bottom:-10px;
+}
+.time{
+	height:35%;
+	background:#3EBB99;
+	color:white;
+	position: relative;
+}
+#today{
+	width:100%;
+	position: absolute;
+	top:50%;
+	transform:translateY(-50%);
+
+	h1{
+		text-align:center;
+		font-size:70px;
+		padding-top:0;
+	}
+
+	p{
+		margin-top:10px;
+		text-align:center;
+		font-size:25px;
+	}
+}
+.medics-notice{
+	padding:5px 8px;
+}
+#title{
+	font-weight: bold;
+	font-size:20px;
+	padding-bottom:10px;
+}
+ion-thumbnail img{
+	border:1px solid black;
+}
+ion-row{
+	align-self: center
+}
+#desc{
+	margin-top:-30px;
+}
+.marquee{
+	width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 50s linear infinite ;
+	:hover {
+		animation-play-state: paused
+	}
+}
+
+@keyframes marquee {
+	0%   { text-indent: 30em }
+    100% { text-indent: -105em }
+}

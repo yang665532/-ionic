@@ -1,0 +1,25 @@
+.info, .ordered_product{
+    border: 1px solid grey;
+    #time{
+        border-bottom-style: solid;
+        border-bottom-color: rgb(179, 179, 179);
+        border-bottom-width: 0.8px;
+    }
+    #pic{
+        width: 25%;
+        img{border: 1px solid #000;}
+    }
+    .price{
+        color: orangered;
+    }
+}
+
+table{
+    width: 100%;
+    tr{
+        text-align: justify;
+    }
+    #info{
+        width: 60%;
+    }
+}
