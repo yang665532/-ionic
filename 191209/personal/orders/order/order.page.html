@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="end" (click)="close()">
+        關閉
+      </ion-buttons>
+      <ion-title>訂單明細</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list class="info" mode="ios">
+    <ion-item color="light" lines="full">
+      <ion-item color="light" lines="none">{{showTitle[0]}}</ion-item>
+      <ion-item lines="none" color="light" slot="end"> 
+        {{realName}}
+      </ion-item>
+    </ion-item>
+
+    <ion-item lines="none" id="time">
+      <ion-item lines="none">{{showTitle[1]}}</ion-item>
+      <ion-item lines="none" slot="end">
+        {{dateTime}}
+      </ion-item>
+    </ion-item>
+
+    <ion-item color="light" lines="full">
+      <ion-item color="light" lines="none">
+        {{showTitle[2]}}
+      </ion-item>
+    </ion-item>
+    <ion-item slot="end" lines="full">
+      <ion-item lines="none">
+          {{address}}
+      </ion-item>
+    </ion-item>
+    
+
+    <ion-item color="light" lines="full">
+      <ion-item color="light" lines="none">{{showTitle[3]}}</ion-item>
+      <ion-item color="light" lines="none" slot="end">
+        {{payment}}
+      </ion-item>
+    </ion-item>
+
+    <ion-item lines="full" id="time">
+      <ion-item lines="full">{{showTitle[4]}}</ion-item>
+      <ion-item slot="end" lines="none">
+        {{shipment}}
+      </ion-item>
+    </ion-item>
+
+    <ion-item color="light" lines="none">
+      <ion-item lines="none" color="light">{{showTitle[5]}}</ion-item>
+      <ion-item lines="none" color="light" slot="end">
+        <p style="color: orangered;">${{total}}</p>
+      </ion-item>
+    </ion-item>
+  </ion-list>
+
+  <ion-list class="ordered_product" mode="ios">
+    <ion-item color="light">
+      品項：{{lengthOfCart}}
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let ord of orderDetail">
+          <table>
+            <tr>
+              <td id="pic"><img src="{{ord.pic}}" width="80px"></td>
+              <td id="info">
+                <tr>{{ord.name}}</tr>
+                <tr>
+                  <ion-item lines="none">
+                    <p class="price">${{ord.price}}</p>
+                    <ion-item lines="none" slot="end">
+                      x{{ord.qty}}
+                    </ion-item>
+                  </ion-item>
+                </tr>
+                <tr slot="end">
+                  <ion-item slot="end" lines="none" style="color: orangered;
+                                width: auto;">
+                    小計：{{ord.qty * ord.price}}
+                  </ion-item>
+                </tr>
+              </td>
+            </tr>
+          </table>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>

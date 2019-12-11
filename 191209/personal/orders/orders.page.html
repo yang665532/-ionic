@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>我的訂單</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list class="ordered_product" mode="ios">
+    <ion-item color="light">
+      項目：{{order_Detail.length}}個
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let ord of orderDetail" (click)="goDetailModel(
+            ord.lengthOfCart, ord.id, ord.total)" routerLink="/order">
+        <table>
+          <tr>
+            <td id="pic"><img src="{{ord.photo}}" width="80px"></td>
+            <td id="info">
+              <tr>
+                <ion-item lines="none">{{ord.name}}</ion-item>
+              </tr>
+              <tr>
+                <ion-item lines="none">
+                  <p class="price">${{ord.total}}</p>
+                  <ion-item lines="none" slot="end" id="amount">
+                    {{ord.lengthOfCart}}項商品
+                  </ion-item>
+                </ion-item>
+              </tr>
+              <tr slot="end">
+                <ion-item slot="end" lines="none" style="color: rgb(63, 139, 0);
+                              width: auto;">
+                  {{ord.id}}
+                </ion-item>
+              </tr>
+              </td>
+            </tr>
+          </table>
+      </ion-item>
+    </ion-list>
+  </ion-list>
+</ion-content>
