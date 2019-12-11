@@ -1,0 +1,49 @@
+.name{
+    margin-left:10px;
+}
+
+ion-footer{
+    box-shadow: 0 -3px 5px 0 rgb(146, 146, 146);
+    //height: 200px;
+}
+
+.comment p{
+    margin-left:10px;
+}
+
+#select{
+    -webkit-user-select: text;
+    user-select: auto !important;
+}
+
+.info{
+    font-size: 10px; 
+    color: grey;
+}
+
+ion-textarea{
+    padding-left:20px;
+}
+
+.more{
+    border-radius: 15px;
+    //background: rgba(62, 187, 154, 0.589);
+    :hover{
+        color:#000;
+    }
+}
+
+.send{
+    color:rgb(62, 187, 154);
+}
+
+.save{
+    font-size: 20px;
+}
+
+.newC{
+    color:rgba(128, 128, 128, 0.795);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}

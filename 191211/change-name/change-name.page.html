@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>變更用戶名稱</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-input [(ngModel)]="userName" class="name_input"></ion-input>
+  <ion-button expand="block" (click)="saveName(userName)">儲存</ion-button>
+</ion-content>

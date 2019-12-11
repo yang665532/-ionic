@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons class="cancel"
+      (click)="closeModal()" slot="end">
+      取消
+    </ion-buttons>
+    <ion-title>
+      編輯留言
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-header class="title">
+  <ion-item lines="none">
+    <ion-avatar item-start>
+      <img src="{{ProfilePic}}">
+    </ion-avatar>
+    <p class="name">{{userName}}</p>
+  </ion-item>
+</ion-header>
+  
+<ion-content>
+  <div>
+    <ion-card-content>
+      <!-- <p style="white-space: pre-line;">{{article}}</p> -->
+      <ion-textarea required name="comment"
+        auto-grow [(ngModel)]="comment"
+        type="text" maxlength="500" #editComment>
+      </ion-textarea>
+    </ion-card-content>
+  </div>
+</ion-content>
+
+<ion-footer fixed>
+  <ion-item>
+    <p slot="end">{{comment.length}}/500</p>
+    <ion-buttons class="send"
+      fill="clear" slot="end"
+      (click)="postEditComment(comment)">
+      <ion-icon 
+      name="paper-plane">
+      </ion-icon>
+    </ion-buttons>
+  </ion-item> 
+</ion-footer>
