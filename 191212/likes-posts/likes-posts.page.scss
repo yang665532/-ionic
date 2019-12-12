@@ -1,0 +1,33 @@
+.post{
+    border-radius: 5px;
+    border: 1px solid grey;
+    margin-bottom: 15px;
+    height: auto;
+}
+
+.article{
+    height: 60px;
+    overflow: hidden;
+    padding: 5px 15px;
+    text-align: justify;
+    font-size: 15px;
+}
+
+.name{
+    margin-left:10px;
+}
+
+#more{
+    padding: 0 15px;
+    font-size: 15px;
+}
+
+.img_thummb{
+    border-bottom: 1px solid grey;
+    height: 80xp;
+    padding: 0 15px;
+}
+
+#noPost{
+    text-align: center;
+}

@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    <ion-title>穴道圖</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-segment mode="ios" value="arm" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="arm" mode="ios"
+      (ionFocus)="arm()">
+      <ion-label>上肢</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="body" mode="ios"
+      (ionFocus)="body()">
+      <ion-label>身體</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="head" mode="ios"
+      (ionFocus)="head()">
+      <ion-label>頭部</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="leg" mode="ios"
+      (ionFocus)="leg()">
+      <ion-label>下肢</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment mode="ios" value="front" color="secondary" *ngIf="Arm"
+    (ionChange)="armPart($event)">
+    <ion-segment-button value="front" mode="ios">
+      <ion-label>前面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="back" mode="ios">
+      <ion-label>後面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="out" mode="ios">
+      <ion-label>外側</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment mode="ios" value="front" color="secondary" *ngIf="Body"
+    (ionChange)="bodyPart($event)">
+    <ion-segment-button value="front" mode="ios">
+      <ion-label>前面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="back" mode="ios">
+      <ion-label>後面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="right" mode="ios">
+      <ion-label>右側</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment mode="ios" value="front" color="secondary" *ngIf="Head"
+    (ionChange)="headPart($event)">
+    <ion-segment-button value="front" mode="ios">
+      <ion-label>前面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="back" mode="ios">
+      <ion-label>後面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="right" mode="ios">
+      <ion-label>右側</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-segment mode="ios" value="front" color="secondary" *ngIf="Leg"
+    (ionChange)="legPart($event)">
+    <ion-segment-button value="front" mode="ios">
+      <ion-label>前面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="back" mode="ios">
+      <ion-label>後面</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="in" mode="ios">
+      <ion-label>內側</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="out" mode="ios">
+      <ion-label>外側</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <img [src]="listPic">
+  <div id="imgSource">圖片來自《解剖經穴圖》</div>
+</ion-content>
