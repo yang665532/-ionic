@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>
+        我的按讚
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!isLiked" id="noPost">您還沒有按任何貼文讚喔！</div>
+  <div *ngIf="isLiked" (click)="toPost()">
+    <div class="post" *ngFor="let post of posts">
+      <ion-item line="none">
+        <ion-avatar>
+          <img src="{{post.avatar}}">
+        </ion-avatar>
+        <h3 class="name">{{post.postName}}</h3>
+      </ion-item>
+
+      <div class="article">
+        <span style="white-space: pre-line;" id="select">{{post.article}}</span><br>
+      </div>
+      <div id="more">...</div>
+      <div class="img_thummb">
+        <img src="{{post.img}}" width="70px" height="70px">
+      </div>
+      <ion-item lines="none">
+        <ion-icon name="heart" [ngStyle]="{'color':'red'}"></ion-icon>
+        <p style="margin-right:5px;">{{postLikes.length}}</p>
+        <ion-icon name="chatboxes"></ion-icon>
+        <p>{{userComment.length}}</p>
+      </ion-item>
+    </div>
+  </div>
+</ion-content>

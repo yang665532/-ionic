@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="end" (click)="close()">
+        關閉
+      </ion-buttons>
+    <ion-title>
+      {{title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <iframe width="100%" height="360" 
+          [src]="video" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+    Your browser does not support the video tag.
+  </iframe>
+
+  <div>
+    <h3 class="title" *ngIf="related">
+      <ion-icon name="star" color="primary" class="star"></ion-icon>
+      提及穴道
+    </h3>
+    <ion-list *ngFor="let acup of acups">
+      <ion-item>
+        <ion-col size="4" class="pic">
+          <img src="{{acup.acup_pic}}" width="90">
+        </ion-col>
+        <ion-col size="8">
+          <h6>
+            {{acup.desc}}
+          </h6>
+        </ion-col>
+      </ion-item>
+    </ion-list>
+    <ion-button class="game" routerLink="/game" routerDirection="root" (click)="close_passId(title)" [disabled]="block"
+      *ngIf="related">
+      <ion-label>
+        <ion-icon name="flash"></ion-icon>
+        {{game}}
+        <ion-icon name="flash"></ion-icon>
+      </ion-label>
+    </ion-button>
+  </div>
+
+</ion-content>

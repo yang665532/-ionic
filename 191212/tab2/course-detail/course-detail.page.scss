@@ -1,0 +1,33 @@
+.pic{
+    margin-right: 5px;
+}
+
+.title{
+    margin-top: 20px;
+}
+
+h6{
+    white-space: pre-line;
+}
+
+.star{
+    margin:auto;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.game{
+    background: rgba(62, 187, 154, 0.527); 
+    display: flex;
+    align-items: center;
+    vertical-align: middle;  
+    font-size: 15px;
+    ion-icon{
+        color: yellow;
+        margin:auto;
+        align-items: center;
+        vertical-align: middle;
+        size: 15px;
+    } 
+}
+
