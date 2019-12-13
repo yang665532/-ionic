@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>
+        我的留言
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="!isCmted" id="noCmt">您還沒有新增任何留言喔！</div>
+  <div *ngFor="let item of userComment"
+    style="white-space: pre-line;">
+    <div class="oneCmt" *ngIf="currentUserCmt(item.uid)">
+      <ion-item class="from">來自貼文<br>【{{item.title}}】</ion-item>
+      <ion-item>
+        <ion-avatar>
+          <img src="{{item.profilePic}}">
+        </ion-avatar>
+        <p class="name">{{item.userName}}</p>
+          <ion-icon name="md-more" slot="end" class="more"
+          (click)="moreOpts(item.id, item.userName, item.profilePic, item.cmt)">
+        </ion-icon>
+      </ion-item>
+  
+      <div>
+        <ion-card-content (click)="toPost()">
+          <span id="select">{{item.cmt}}</span>
+        </ion-card-content>
+        <ion-item class="info">
+          <p slot="end">
+            {{item.dateTime}}
+          </p>
+        </ion-item>    
+      </div>
+    </div>
+  </div>
+</ion-content>
